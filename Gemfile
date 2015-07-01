@@ -41,6 +41,9 @@ gem 'bootstrap-sass'
 # User creation
 gem 'devise'
 
+# Pagination
+gem 'kaminari'
+
 group :development, :test do
 	# Development testing
 	gem 'pry'
