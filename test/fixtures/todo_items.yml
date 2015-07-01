@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  todo_list_id: 1
+  task_name: MyString
+  description: MyText
+  due_date: 2015-06-30
+  complete: false
+
+two:
+  todo_list_id: 1
+  task_name: MyString
+  description: MyText
+  due_date: 2015-06-30
+  complete: false
