@@ -3,13 +3,21 @@
 one:
   todo_list_id: 1
   task_name: MyString
+<<<<<<< HEAD
   description: MyText
+=======
+  description: MyString
+>>>>>>> dd4c4962103f2c8f0ea7e152b7d437fab459e7c4
   due_date: 2015-06-30
   complete: false
 
 two:
   todo_list_id: 1
   task_name: MyString
+<<<<<<< HEAD
   description: MyText
+=======
+  description: MyString
+>>>>>>> dd4c4962103f2c8f0ea7e152b7d437fab459e7c4
   due_date: 2015-06-30
   complete: false
