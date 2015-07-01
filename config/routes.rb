@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 	devise_scope :user do
 	  authenticated :user do
-	    root 'home#index', as: :authenticated_root
+	    root 'todo_lists#index', as: :authenticated_root
 	  end
 
 	  unauthenticated do
@@ -11,4 +11,9 @@ Rails.application.routes.draw do
 	  end
 	end
 
+	resources :user, only: [] do
+		resources :todo_lists, only: [:index, :show]
+	end
+
+	resources :todo_lists
 end
