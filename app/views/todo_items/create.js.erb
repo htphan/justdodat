@@ -1,0 +1,4 @@
+<% new_task = render partial: "item", locals: { todo_item: @todo_item } %>
+$(".todo-list-items").append("<%= escape_javascript(new_task) %>")
+
+$(".todo-item-form").replaceWith("<%= j(render partial: "todo_items/newform") %>")

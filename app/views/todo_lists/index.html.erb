@@ -1,29 +1,43 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Todo Lists</h1>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @todo_lists.each do |todo_list| %>
-      <tr>
-        <td><%= todo_list.user_id %></td>
-        <td><%= todo_list.title %></td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="todo-list-index">
+      <h1 style="margin-top: 10px;">Todo Lists</h1>
+        <%= form_for TodoList.new do |f| %>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-12">
+                <%= f.text_field :title, placeholder: "Enter New List Name Here...", class: "form-control" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Title:</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<br>
+        <tbody class="todo-list-items">
+          <% @todo_lists.each do |todo_list| %>
+            <tr>
+              <td><%= todo_list.title %></td>
+              <td><%= link_to 'Show', todo_list, class: "btn btn-default btn-xs" %></td>
+              <td><%= link_to 'Edit', edit_todo_list_path(todo_list), class: "btn btn-default btn-xs" %></td>
+              <td><%= link_to 'Delete', todo_list, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <!-- <%= link_to 'New Todo list', new_todo_list_path %> -->
+  </div>
+</div>
 
-<%= link_to 'New Todo list', new_todo_list_path %>
+
+<!-- , nil, placeholder: "Enter New List Name Here...", class: "form-control" -->

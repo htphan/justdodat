@@ -1,0 +1,10 @@
+<%= form_for TodoItem.new, remote: true do |f| %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.text_field :task_name, placeholder: "Enter New Task Name Here...", class: "form-control" %>
+        <%= f.hidden_field :todo_list_id, value: params[:id] %>
+      </div>
+    </div>
+  </div>
+<% end %>

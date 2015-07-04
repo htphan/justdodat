@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <% if todo_item.complete %>
+      <%= button_to '', todo_item, method: :put, class: "glyphicon glyphicon-check", 
+        form: { todo_item: { todo_list_id: params[:id], complete: false } }  %>
+    <% else %>
+      <%= button_to '', todo_item, method: :put, class: "glyphicon glyphicon-unchecked", form: { todo_item: { todo_list_id: params[:id], complete: true } } %>
+    <% end %>
+  </td>
+  <td><%= todo_item.task_name %></td>
+  <td><%= link_to '', todo_item, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove pull-right", todo_list_id: params[:id] %></td>
+</tr>
